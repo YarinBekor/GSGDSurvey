@@ -29,22 +29,27 @@ def find_dg4d_dirs(root_dir):
             dg4d_dirs.append(dg4d_path)
     return dg4d_dirs
 
-# Main execution
-root_dir = "COMP"
-dg4d_dirs = find_dg4d_dirs(root_dir)
+# # Main execution
+# root_dir = "COMP"
+# dg4d_dirs = find_dg4d_dirs(root_dir)
 
-if not dg4d_dirs:
-    logger.warning(f"No DG4D directories found under {root_dir}")
-else:
-    logger.info(f"Found {len(dg4d_dirs)} DG4D directories")
-    for dg4d_dir in dg4d_dirs:
-        logger.info(f"Processing directory: {dg4d_dir}")
-        gif_pattern = os.path.join(dg4d_dir, "**", "*.gif")
-        gif_files = glob.glob(gif_pattern, recursive=True)
+# if not dg4d_dirs:
+#     logger.warning(f"No DG4D directories found under {root_dir}")
+# else:
+#     logger.info(f"Found {len(dg4d_dirs)} DG4D directories")
+#     for dg4d_dir in dg4d_dirs:
+#         logger.info(f"Processing directory: {dg4d_dir}")
+#         gif_pattern = os.path.join(dg4d_dir, "**", "*.gif")
+#         gif_files = glob.glob(gif_pattern, recursive=True)
         
-        if not gif_files:
-            logger.info(f"No GIF files found in {dg4d_dir}")
-        else:
-            logger.info(f"Found {len(gif_files)} GIF files in {dg4d_dir}")
-            for gif_file in gif_files:
-                process_gif(gif_file, gif_file)
+#         if not gif_files:
+#             logger.info(f"No GIF files found in {dg4d_dir}")
+#         else:
+#             logger.info(f"Found {len(gif_files)} GIF files in {dg4d_dir}")
+#             for gif_file in gif_files:
+#                 process_gif(gif_file, gif_file)
+
+gifs_to_process = ["-45.00.gif", "-135.00.gif","45.00.gif", "135.00.gif"]
+
+for g in gifs_to_process:
+    process_gif(g, g)

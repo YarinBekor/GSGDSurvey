@@ -49,7 +49,7 @@ def find_dg4d_dirs(root_dir):
 #             for gif_file in gif_files:
 #                 process_gif(gif_file, gif_file)
 
-gifs_to_process = ["-45.00.gif", "-135.00.gif","45.00.gif", "135.00.gif"]
+gifs_to_process = ["COMP/Variants/Brian_Running/castle/DG4D/step_22.5.gif", "COMP/Variants/Brian_Running/castle/DG4D/step_247.5.gif"]
 
 for g in gifs_to_process:
     process_gif(g, g)
